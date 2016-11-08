@@ -1,0 +1,4 @@
+.url { font-size: 14px; font-weight: bold; white-space: nowrap; margin-bottom: 10px; }
+.details-header { font-weight: bold; white-space: nowrap; margin: 20px 0 5px 0; }
+.details-row { white-space: nowrap; margin-bottom: 5px; }
+td { border: solid 1px black; }

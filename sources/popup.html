@@ -1,0 +1,52 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>WalkMe checker</title>
+		
+		<script src="jquery.min.js"></script>
+		<script src="knockout-min.js"></script>
+		<script src="knockout-secure-binding.min.js"></script>
+		<script src="popup.js"></script>
+		<link href="popup.css" rel="stylesheet" type="text/css"/>
+	</head>
+ 
+	<body>
+		<div class="url">
+			<a data-sbind="text: url, attr: { href: url }"></a> - WalkMe <span data-sbind="text: walkmeEnabledText"></span>
+		</div>
+		<div data-sbind="if: walkmeEnabled">
+			<div class="details-header">Details:</div>
+			<div class="details-row">User Id - <span data-sbind="text: userId"></span></div>
+			<div class="details-row">Env - <span data-sbind="text: env"></span></div>
+			<div class="details-row">Is Https - <span data-sbind="text: isHttps"></span></div>
+			<div class="details-row">Host - <span data-sbind="text: host"></span></div>
+			<div class="details-row">async - <span data-sbind="text: async"></span></div>
+
+			<div class="details-header">Settings:</div>
+			<div class="details-row">LibFile - <span data-sbind="text: libFile"></span></div>
+			<div class="details-header">DataFiles:</div>
+			<div class="details-row" data-sbind="foreach: dataFiles">
+				<div class="details-row">Url - <span data-sbind="text: url"></span></div>
+				<div class="details-header">Languages:</div>
+				<table>
+					<thead>
+						<tr>
+							<th>shortName</th>
+							<th>displayName</th>
+							<th>showInPlayer</th>
+						</tr>
+					</thead>
+					<tbody class="details-row" data-sbind="foreach: languages">
+						<tr>
+							<td data-sbind="text: shortName"></td>
+							<td data-sbind="text: displayName"></td>
+							<td data-sbind="text: showInPlayer"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<div id="scripts"></div>
+	</body>
+</html>
